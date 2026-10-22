@@ -3,24 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
-import { products, enquiry } from "@/data/jewellery";
+import { products as originals, enquiry } from "@/data/jewellery";
+import { getProducts } from "@/lib/studio-products";
 import ProductCard from "@/components/ProductCard";
 
 export function generateStaticParams() {
-  return products.map(p=>({slug:p.slug}));
+  return originals.map(p=>({slug:p.slug}));
 }
 
 export async function generateMetadata({params}) {
   const {slug}=await params;
-  const p=products.find(x=>x.slug===slug);
+  const p=(await getProducts()).find(x=>x.slug===slug && x.status==="published");
   return {title:p?`${p.name} | Vrinda Élle`:"Jewellery | Vrinda Élle"};
 }
 
 async function JewelleryDetailContent({params}) {
   const {slug}=await params;
+  const products=(await getProducts()).filter(p=>p.status==="published");
   const product=products.find(p=>p.slug===slug);
-  if(!product) notFound();
-  const similar=products.filter(p=>p.slug!==slug).slice(0,2);
+  if(!product || !product.image) notFound();
+  const similar=products.filter(p=>p.slug!==slug && p.image).slice(0,2);
   return <main className="inner-page">
     <div className="detail-breadcrumb"><Link href="/collections"><ArrowLeft size={15}/> All Collections</Link><span>/</span><span>{product.name}</span></div>
     <section className="detail-layout">

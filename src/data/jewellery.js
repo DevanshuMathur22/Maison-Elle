@@ -1,40 +1,119 @@
 export const products = [
   {
-    slug:"golden-hour",
-    code:"ME-001",
-    name:"The Golden Hour",
-    category:"Earrings",
-    collection:"Everyday Edit",
-    image:"https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1200&q=85",
-    description:"A graceful statement for everyday moments and special evenings.",
-    material:"Fashion jewellery with a gold-tone finish"
+    "slug": "flower-tealight-duo",
+    "code": "CJ-001",
+    "name": "Flower Tea Candle Holders",
+    "category": "Festive Décor",
+    "collection": "Festive Décor",
+    "image": "/products/flower-tealight-duo.webp",
+    "description": "Explore Flower Tea Candle Holders, part of our curated festive décor collection.",
+    "material": "Product details available upon enquiry."
   },
   {
-    slug:"little-romance",
-    code:"ME-002",
-    name:"A Little Romance",
-    category:"Necklaces",
-    collection:"Everyday Edit",
-    image:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1200&q=85",
-    description:"A delicate detail designed to bring warmth to your favourite looks.",
-    material:"Fashion jewellery with a gold-tone finish"
+    "slug": "orange-flower-tealight",
+    "code": "CJ-002",
+    "name": "Orange Floral Tea Candle Holder",
+    "category": "Festive Décor",
+    "collection": "Festive Décor",
+    "image": "/products/orange-flower-tealight.webp",
+    "description": "Explore Orange Floral Tea Candle Holder, part of our curated festive décor collection.",
+    "material": "Product details available upon enquiry."
   },
   {
-    slug:"afterglow",
-    code:"ME-003",
-    name:"Afterglow",
-    category:"Earrings",
-    collection:"Little Statements",
-    image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1200&q=85",
-    description:"An expressive piece for the moments worth remembering.",
-    material:"Fashion jewellery with a gold-tone finish"
+    "slug": "shubh-labh-hanging",
+    "code": "CJ-003",
+    "name": "Shubh Labh Floral Hanging",
+    "category": "Festive Décor",
+    "collection": "Festive Décor",
+    "image": "/products/shubh-labh-hanging.webp",
+    "description": "Explore Shubh Labh Floral Hanging, part of our curated festive décor collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "floral-tealight-handheld",
+    "code": "CJ-004",
+    "name": "Floral Handheld Candle Holder",
+    "category": "Festive Décor",
+    "collection": "Festive Décor",
+    "image": "/products/floral-tealight-handheld.webp",
+    "description": "Explore Floral Handheld Candle Holder, part of our curated festive décor collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "shubh-labh-blue-hangings",
+    "code": "CJ-005",
+    "name": "Shubh Labh Pearl Hangings",
+    "category": "Festive Décor",
+    "collection": "Festive Décor",
+    "image": "/products/shubh-labh-blue-hangings.webp",
+    "description": "Explore Shubh Labh Pearl Hangings, part of our curated festive décor collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "pink-floral-hairband",
+    "code": "CJ-006",
+    "name": "Pink Floral Hairband",
+    "category": "Hair Accessories",
+    "collection": "Hair Accessories",
+    "image": "/products/pink-floral-hairband.webp",
+    "description": "Explore Pink Floral Hairband, part of our curated hair accessories collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "floral-pearl-jewellery-set",
+    "code": "CJ-007",
+    "name": "Floral Pearl Jewellery Set",
+    "category": "Floral Jewellery",
+    "collection": "Floral Jewellery",
+    "image": "/products/floral-pearl-jewellery-set.webp",
+    "description": "Explore Floral Pearl Jewellery Set, part of our curated floral jewellery collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "rose-pearl-bangles",
+    "code": "CJ-008",
+    "name": "Rose Pearl Bangles",
+    "category": "Floral Jewellery",
+    "collection": "Floral Jewellery",
+    "image": "/products/rose-pearl-bangles.webp",
+    "description": "Explore Rose Pearl Bangles, part of our curated floral jewellery collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "pearl-phone-charm",
+    "code": "CJ-009",
+    "name": "Pearl Phone Charm",
+    "category": "Accessories",
+    "collection": "Accessories",
+    "image": "/products/pearl-phone-charm.webp",
+    "description": "Explore Pearl Phone Charm, part of our curated accessories collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "beach-pearl-necklace",
+    "code": "CJ-010",
+    "name": "Beach Pearl Necklace",
+    "category": "Pearl Jewellery",
+    "collection": "Pearl Jewellery",
+    "image": "/products/beach-pearl-necklace.webp",
+    "description": "Explore Beach Pearl Necklace, part of our curated pearl jewellery collection.",
+    "material": "Product details available upon enquiry."
+  },
+  {
+    "slug": "korean-bow-pearl-necklace",
+    "code": "CJ-011",
+    "name": "Korean Bow Pearl Necklace",
+    "category": "Pearl Jewellery",
+    "collection": "Pearl Jewellery",
+    "image": "/products/korean-bow-pearl-necklace.webp",
+    "description": "Explore Korean Bow Pearl Necklace, part of our curated pearl jewellery collection.",
+    "material": "Product details available upon enquiry."
   }
 ];
 
 export const enquiry = (product) => {
   const message = product
-    ? `Hello, I would like to know the price, availability and ordering details for ${product.name} (${product.code}).`
-    : "Hello, I would like to explore your jewellery collection and enquire about prices.";
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "";
-  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+    ? `Hello Vrinda Élle, I'm interested in ${product.name} (Product Code: ${product.code}). Please share its price, availability and ordering details.`
+    : "Hello Vrinda Élle, I would like to explore your collection.";
+  return `https://wa.me/919530079054?text=${encodeURIComponent(message)}`;
 };

@@ -33,6 +33,8 @@ export default function SiteShell({ children }) {
 
   useEffect(() => { setOpen(false); },[pathname]);
 
+  if (pathname.startsWith("/studio")) return <>{children}</>;
+
   return <>
     <div className={`lux-nav-wrap ${scrolled ? "is-scrolled" : ""}`}>
       <motion.header
@@ -42,7 +44,7 @@ export default function SiteShell({ children }) {
         transition={{duration:.7,ease:"easeOut"}}
       >
         <Link prefetch={true} href="/" className="lux-logo" onClick={()=>setOpen(false)}>
-          <span>MAISON <em>ÉLLE</em></span>
+          <span>VRINDA <em>ÉLLE</em></span>
           <small>OBJECTS OF AFFECTION</small>
         </Link>
 
@@ -91,7 +93,7 @@ export default function SiteShell({ children }) {
         exit={{opacity:0,y:-15}}
         transition={{duration:.25}}
       >
-        <span className="lux-mobile-caption">EXPLORE THE MAISON</span>
+        <span className="lux-mobile-caption">EXPLORE VRINDA ÉLLE</span>
         <nav aria-label="Mobile navigation">
           {links.map((link,i)=><motion.div
             key={link.href}
@@ -112,7 +114,7 @@ export default function SiteShell({ children }) {
 
     <footer className="site-footer">
       <div>
-        <Link prefetch={true} href="/" className="brand">MAISON <span>ÉLLE</span><small>OBJECTS OF AFFECTION</small></Link>
+        <Link prefetch={true} href="/" className="brand">VRINDA <span>ÉLLE</span><small>OBJECTS OF AFFECTION</small></Link>
         <p>Little treasures. Lasting feelings.</p>
       </div>
       <div className="site-footer-links">

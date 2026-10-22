@@ -1,0 +1,18 @@
+import { products } from "@/data/jewellery";
+import ProductCard from "@/components/ProductCard";
+
+export const metadata = {title:"Collections | Maison Elle"};
+
+export default function Collections() {
+  return <main className="inner-page">
+    <section className="page-intro">
+      <span className="section-kicker">THE JEWELLERY EDIT</span>
+      <h1>Pieces to <em>adore.</em></h1>
+      <p>Explore thoughtfully chosen jewellery for your everyday rituals, celebrations and everything in between.</p>
+    </section>
+    <section className="catalogue">
+      <div className="catalogue-heading"><span>DISCOVER THE COLLECTION</span><span>{products.length} CURATED PIECES</span></div>
+      <div className="jewel-grid">{products.map(product=><ProductCard key={product.slug} product={product}/>)}</div>
+    </section>
+  </main>;
+}

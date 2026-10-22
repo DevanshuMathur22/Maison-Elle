@@ -1,0 +1,60 @@
+import { Suspense } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArrowUpRight, ArrowLeft } from "lucide-react";
+import { products, enquiry } from "@/data/jewellery";
+import ProductCard from "@/components/ProductCard";
+
+export function generateStaticParams() {
+  return products.map(p=>({slug:p.slug}));
+}
+
+export async function generateMetadata({params}) {
+  const {slug}=await params;
+  const p=products.find(x=>x.slug===slug);
+  return {title:p?`${p.name} | Maison Elle`:"Jewellery | Maison Elle"};
+}
+
+async function JewelleryDetailContent({params}) {
+  const {slug}=await params;
+  const product=products.find(p=>p.slug===slug);
+  if(!product) notFound();
+  const similar=products.filter(p=>p.slug!==slug).slice(0,2);
+  return <main className="inner-page">
+    <div className="detail-breadcrumb"><Link href="/collections"><ArrowLeft size={15}/> All Collections</Link><span>/</span><span>{product.name}</span></div>
+    <section className="detail-layout">
+      <div className="detail-image"><Image src={product.image} alt={product.name} fill unoptimized priority sizes="(max-width: 800px) 100vw, 55vw"/></div>
+      <div className="detail-content">
+        <span className="section-kicker">{product.collection.toUpperCase()} / {product.code}</span>
+        <h1>{product.name}</h1>
+        <p className="detail-category">{product.category}</p>
+        <p>{product.description}</p>
+        <div className="detail-spec"><span>DETAILS</span><p>{product.material}</p></div>
+        <div className="detail-spec"><span>PRICE & AVAILABILITY</span><p>Available upon enquiry</p></div>
+        <a className="primary-button" href={enquiry(product)} target="_blank" rel="noopener noreferrer">Enquire on WhatsApp <ArrowUpRight size={18}/></a>
+        <small className="detail-note">Mention product code {product.code} when enquiring.</small>
+      </div>
+    </section>
+    <section className="similar-section">
+      <div className="section-heading"><div><span className="section-kicker">KEEP EXPLORING</span><h2>You may also <em>love.</em></h2></div></div>
+      <div className="jewel-grid">{similar.map(p=><ProductCard key={p.slug} product={p}/>)}</div>
+    </section>
+  </main>;
+}
+
+
+export default function JewelleryDetail({params}) {
+  return (
+    <Suspense fallback={
+      <main className="inner-page" style={{padding:"160px 8%",minHeight:"75vh"}}>
+        <span className="section-kicker">THE JEWELLERY EDIT</span>
+        <h1 style={{fontFamily:"Georgia, serif",fontSize:"clamp(40px,6vw,72px)",marginTop:24}}>
+          Discovering your piece...
+        </h1>
+      </main>
+    }>
+      <JewelleryDetailContent params={params}/>
+    </Suspense>
+  );
+}

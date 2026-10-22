@@ -1,7 +1,7 @@
 import { ArrowUpRight, MessageCircle } from "lucide-react";
 import { enquiry } from "@/data/jewellery";
 
-export const metadata={title:"Contact | Maison Elle"};
+export const metadata={title:"Contact | Vrinda Élle"};
 
 export default function Contact(){
   return <main className="inner-page">

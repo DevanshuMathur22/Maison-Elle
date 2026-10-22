@@ -61,7 +61,7 @@ export default function Home() {
 
     <section className="story" id="story">
       <div className="story-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=85" alt="Jewellery close-up"/></div>
-      <motion.div {...fade} className="story-copy"><span className="section-kicker">A NOTE FROM THE MAISON</span><h2>Made for the<br/><em>little things.</em></h2><p>Some pieces are more than accessories. They're the finishing touch before a special evening, the everyday favourite, the tiny detail that makes you feel like yourself.</p><p>We believe beauty should feel personal, effortless, and a little magical.</p><a href={whatsapp("Maison Elle jewellery")} target="_blank" rel="noreferrer" className="text-link">Find your piece <ArrowRight size={18}/></a></motion.div>
+      <motion.div {...fade} className="story-copy"><span className="section-kicker">A NOTE FROM THE MAISON</span><h2>Made for the<br/><em>little things.</em></h2><p>Some pieces are more than accessories. They're the finishing touch before a special evening, the everyday favourite, the tiny detail that makes you feel like yourself.</p><p>We believe beauty should feel personal, effortless, and a little magical.</p><a href={whatsapp("Vrinda Élle jewellery")} target="_blank" rel="noreferrer" className="text-link">Find your piece <ArrowRight size={18}/></a></motion.div>
     </section>
 
     <section className="closing"><span className="section-kicker">SOMETHING BEAUTIFUL AWAITS</span><h2>Let's find your<br/><em>next favourite.</em></h2><a className="primary-button" href={whatsapp("your jewellery collection")} target="_blank" rel="noreferrer">Chat with us on WhatsApp <ArrowUpRight size={17}/></a></section>

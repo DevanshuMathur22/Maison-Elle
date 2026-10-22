@@ -4,7 +4,7 @@ import { ArrowUpRight, Gem, Heart, Sparkles, Flower2 } from "lucide-react";
 import { enquiry } from "@/data/jewellery";
 
 export const metadata = {
-  title:"Our Story | Maison Elle",
+  title:"Our Story | Vrinda Élle",
   description:"Discover our world of artificial jewellery, from head adornments and bridal sets to rings, anklets and everyday pieces."
 };
 

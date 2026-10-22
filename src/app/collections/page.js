@@ -22,7 +22,7 @@ const products = [
 const categories = ["All","Festive Décor","Hair Accessories","Floral Jewellery","Pearl Jewellery","Accessories"];
 
 const whatsapp = (p) => {
-  const message = `Hello Maison Élle, I'm interested in ${p[1]} (Product Code: ${p[0]}). Please share its price, availability and ordering details.`;
+  const message = `Hello Vrinda Élle, I'm interested in ${p[1]} (Product Code: ${p[0]}). Please share its price, availability and ordering details.`;
   return `https://wa.me/919530079054?text=${encodeURIComponent(message)}`;
 };
 

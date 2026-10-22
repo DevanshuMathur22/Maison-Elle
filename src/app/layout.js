@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MAISON ÉLLE | Curated Jewellery",
+  title: "VRINDA ÉLLE | Curated Jewellery",
   description: "Explore curated jewellery and enquire directly on WhatsApp.",
 };
 

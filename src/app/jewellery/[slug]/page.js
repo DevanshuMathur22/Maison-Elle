@@ -13,7 +13,7 @@ export function generateStaticParams() {
 export async function generateMetadata({params}) {
   const {slug}=await params;
   const p=products.find(x=>x.slug===slug);
-  return {title:p?`${p.name} | Maison Elle`:"Jewellery | Maison Elle"};
+  return {title:p?`${p.name} | Vrinda Élle`:"Jewellery | Vrinda Élle"};
 }
 
 async function JewelleryDetailContent({params}) {

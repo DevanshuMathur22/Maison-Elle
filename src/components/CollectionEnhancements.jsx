@@ -6,7 +6,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, ChevronDown, Gift, Heart, MessageCircle, Sparkles } from "lucide-react";
 
 const whatsapp = "https://wa.me/919530079054?text=" + encodeURIComponent(
-  "Hello Maison Élle, I've explored your featured collection. Please share more available designs and ordering details."
+  "Hello Vrinda Élle, I've explored your featured collection. Please share more available designs and ordering details."
 );
 
 const moments = [

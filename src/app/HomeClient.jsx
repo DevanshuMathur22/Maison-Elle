@@ -1,4 +1,5 @@
 "use client";
+import NetworkImage from "@/components/NetworkImage";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight, Menu, X, Camera, Heart } from "lucide-react";
@@ -25,7 +26,7 @@ export default function Home({featured=[]}) {
         <a className="primary-button" href="/collections">Explore the collection <ArrowUpRight size={17}/></a>
       </motion.div>
       <motion.div className="hero-visual" initial={{opacity:0,scale:1.035}} animate={{opacity:1,scale:1}} transition={{duration:.75,ease:[.22,1,.36,1]}}>
-        <img loading="eager" fetchPriority="high" decoding="async" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1400&q=90" alt="Gold jewellery editorial"/>
+        <NetworkImage loading="eager" fetchPriority="high" decoding="async" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1400&q=90" alt="Gold jewellery editorial" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
         <div className="hero-image-label"><span>01 / 03</span><span>THE ART OF ADORNMENT</span></div>
       </motion.div>
       <div className="hero-side">TIMELESS PIECES · MODERN ROMANCE</div>
@@ -39,11 +40,11 @@ export default function Home({featured=[]}) {
 
     <section className="collections">
       <motion.a {...fade} href="/collections" className="collection-card collection-large">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1400&q=85" alt="Curated jewellery"/>
+        <NetworkImage loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1400&q=85" alt="Curated jewellery" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
         <div className="collection-overlay"><span>01 — CURATED WITH LOVE</span><h3>The Everyday<br/><em>Edit</em></h3><span className="circle-arrow"><ArrowUpRight/></span></div>
       </motion.a>
       <motion.a {...fade} href="/collections" className="collection-card collection-small">
-        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1000&q=85" alt="Statement jewellery"/>
+        <NetworkImage loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1000&q=85" alt="Statement jewellery" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
         <div className="collection-overlay"><span>02 — FOR THE EXTRAORDINARY</span><h3>Little<br/><em>Statements</em></h3><span className="circle-arrow"><ArrowUpRight/></span></div>
       </motion.a>
     </section>
@@ -52,7 +53,7 @@ export default function Home({featured=[]}) {
       <motion.div {...fade} className="section-heading"><div><span className="section-kicker">HANDPICKED FOR YOU</span><h2>Currently <em>adored.</em></h2></div><span className="heading-note">A FEW OF OUR FAVOURITES —</span></motion.div>
       <div className="product-grid">
         {(featured.length?featured.map((p,i)=>({id:p.code,name:p.name,type:p.category,image:p.image,slug:p.slug})):pieces).map((p,i)=><article key={p.id} className="product">
-          <div className="product-image"><img loading="lazy" decoding="async" src={p.image} alt={p.name}/><span className="product-index">{p.id}</span><a aria-label={`Enquire about ${p.name}`} href={whatsapp(`${p.name} (Product ${p.id})`)} target="_blank" rel="noreferrer" className="product-heart"><Heart size={18}/></a></div>
+          <div className="product-image"><NetworkImage loading="lazy" decoding="async" src={p.image} alt={p.name} width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/><span className="product-index">{p.id}</span><a aria-label={`Enquire about ${p.name}`} href={whatsapp(`${p.name} (Product ${p.id})`)} target="_blank" rel="noreferrer" className="product-heart"><Heart size={18}/></a></div>
           <div className="product-info"><div><span>{p.type}</span><h3>{p.name}</h3></div></div>
           <a className="product-link" href={whatsapp(`${p.name} (Product ${p.id})`)} target="_blank" rel="noreferrer">Enquire on WhatsApp <ArrowUpRight size={15}/></a>
         </article>)}
@@ -60,11 +61,11 @@ export default function Home({featured=[]}) {
     </section>
 
     <section className="story" id="story">
-      <div className="story-photo"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=85" alt="Jewellery close-up"/></div>
-      <motion.div {...fade} className="story-copy"><span className="section-kicker">A NOTE FROM VRINDA ÉLLE</span><h2>Made for the<br/><em>little things.</em></h2><p>Some pieces are more than accessories. They're the finishing touch before a special evening, the everyday favourite, the tiny detail that makes you feel like yourself.</p><p>We believe beauty should feel personal, effortless, and a little magical.</p><a href={whatsapp("Vrinda Élle jewellery")} target="_blank" rel="noreferrer" className="text-link">Find your piece <ArrowRight size={18}/></a></motion.div>
+      <div className="story-photo"><NetworkImage loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=85" alt="Jewellery close-up" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/></div>
+      <motion.div {...fade} className="story-copy"><span className="section-kicker">A NOTE FROM VRINDA ÉLLE</span><h2>Made for the<br/><em>little things.</em></h2><p>Some pieces are more than accessories. They&apos;re the finishing touch before a special evening, the everyday favourite, the tiny detail that makes you feel like yourself.</p><p>We believe beauty should feel personal, effortless, and a little magical.</p><a href={whatsapp("Vrinda Élle jewellery")} target="_blank" rel="noreferrer" className="text-link">Find your piece <ArrowRight size={18}/></a></motion.div>
     </section>
 
-    <section className="closing"><span className="section-kicker">SOMETHING BEAUTIFUL AWAITS</span><h2>Let's find your<br/><em>next favourite.</em></h2><a className="primary-button" href={whatsapp("your jewellery collection")} target="_blank" rel="noreferrer">Chat with us on WhatsApp <ArrowUpRight size={17}/></a></section>
+    <section className="closing"><span className="section-kicker">SOMETHING BEAUTIFUL AWAITS</span><h2>Let&apos;s find your<br/><em>next favourite.</em></h2><a className="primary-button" href={whatsapp("your jewellery collection")} target="_blank" rel="noreferrer">Chat with us on WhatsApp <ArrowUpRight size={17}/></a></section>
 
   </main>;
 }

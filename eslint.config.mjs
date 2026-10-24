@@ -10,6 +10,15 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "**/.studio-patch-backups/**",
+    "**/.smoothness-v1-backup/**",
+    "**/.performance-v2-backup/**",
+    "**/.lint-final-backup/**",
+    "**/.font-optimization-backup/**",
+    "**/.image-optimization-backup/**",
+    "**/*.before-*.bak",
+    "**/*.before-*",
+    "**/*.bak",
   ]),
 ]);
 

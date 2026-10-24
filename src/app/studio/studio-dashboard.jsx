@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import {useEffect,useMemo,useRef,useState} from "react";
 import {useRouter} from "next/navigation";
@@ -57,7 +58,7 @@ export default function StudioDashboard({user}){
     return data.products||[];
   }
 
-  useEffect(()=>{load().catch(e=>setMessage(e.message));},[]);
+  useEffect(()=>{Promise.resolve().then(()=>load()).catch(e=>setMessage(e.message));},[]);
 
   const active=stats.active??products.filter(p=>p.status!=="archived").length;
   const code=useMemo(()=>nextCode(products),[products]);
@@ -302,6 +303,9 @@ async function upload(file,replaceIndex=null){
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[.25em] text-[#c5a572]">VRINDA ÉLLE · PRIVATE STUDIO</p>
           <h1 className="mt-1 font-serif text-2xl italic sm:text-3xl">Collection Studio</h1>
+          <a href="/studio/occasions" className="mt-3 inline-flex items-center rounded-lg border border-[#c5a572]/40 px-4 py-2 text-xs text-[#c5a572] hover:bg-[#c5a572]/10">
+            Manage Occasions →
+          </a>
         </div>
         <button onClick={logout} className={btn+" border border-[#c5a572]/30"}>
           <LogOut size={15}/> Sign out
@@ -386,7 +390,7 @@ async function upload(file,replaceIndex=null){
             </div>
             {!!images.length&&<div className="mt-3 flex flex-wrap gap-2">
               {images.map((src,i)=><div key={src} className="w-24">
-                <img src={src} alt={`Product ${i+1}`} className="h-20 w-24 rounded-lg object-cover"/>
+                <Image src={src} alt={`Product ${i+1}`} className="h-20 w-24 rounded-lg object-cover" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized/>
                 <div className="mt-1 flex gap-1">
                   <label className="flex flex-1 cursor-pointer justify-center rounded border border-[#c5a572]/30 py-1 text-[10px]">
                     Replace
@@ -474,7 +478,7 @@ async function upload(file,replaceIndex=null){
         {filtered.map(p=><article key={p.slug} className="overflow-hidden rounded-xl border border-[#c5a572]/20 bg-[#302824]">
           <div className="flex gap-3 p-3">
             <div className="h-24 w-24 shrink-0 overflow-hidden rounded-lg bg-[#211b18]">
-              {p.image?<img src={p.image} alt={p.name} className="h-full w-full object-cover"/>:
+              {p.image?<Image src={p.image} alt={p.name} className="h-full w-full object-cover" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized/>:
                 <div className="flex h-full items-center justify-center"><ImagePlus size={22}/></div>}
             </div>
             <div className="min-w-0 flex-1">

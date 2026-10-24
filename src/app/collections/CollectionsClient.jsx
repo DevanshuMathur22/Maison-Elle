@@ -1,11 +1,14 @@
 "use client";
+import Image from "next/image";
 import CollectionEnhancements from "@/components/CollectionEnhancements";
 
 import { useState } from "react";
+import Link from "next/link";
+import {Search,X} from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, MessageCircle, Sparkles } from "lucide-react";
 
-const categories = ["All","Festive Décor","Hair Accessories","Floral Jewellery","Pearl Jewellery","Accessories"];
+
 
 const whatsapp = (p) => {
   const message = `Hello Vrinda Élle, I'm interested in ${p.name} (Product Code: ${p.code}). Please share its price, availability and ordering details.`;
@@ -14,8 +17,10 @@ const whatsapp = (p) => {
 
 export default function Catalogue({products=[]}) {
   const [active,setActive] = useState("All");
+  const [search,setSearch] = useState("");
+  const categories=["All",...new Set(products.map(p=>p.category).filter(Boolean))];
   const reduced = useReducedMotion();
-  const visible = products.filter(p=>active==="All"||p.category===active);
+  const visible=products.filter(p=>(active==="All"||p.category===active)&&`${p.name} ${p.code} ${p.category}`.toLowerCase().includes(search.trim().toLowerCase()));
 
   return (
     <main className="min-h-screen bg-[#211b18] text-[#e3d6c4]">
@@ -37,6 +42,10 @@ export default function Catalogue({products=[]}) {
       </section>
 
       <section className="mx-auto max-w-7xl px-[6%] pb-28">
+        <div className="relative mb-7 max-w-xl">
+          <Search size={19} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#c5a572]"/>
+          <input type="search" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search designs, product names or codes..." aria-label="Search collections" className="w-full rounded-lg border border-[#c5a572]/30 bg-[#302824] py-4 pl-12 pr-5 text-sm text-[#e3d6c4] outline-none placeholder:text-[#b7b2ac] focus:border-[#c5a572]"/>
+        </div>
         <div className="mb-9 flex flex-wrap items-center gap-3 border-b border-[#c5a572]/20 pb-8">
           {categories.map(c=>(
             <button key={c} onClick={()=>setActive(c)}
@@ -56,7 +65,11 @@ export default function Catalogue({products=[]}) {
           <span>{visible.length} PIECES</span>
         </div>
 
-        <div className="grid grid-cols-3 gap-x-2 gap-y-7 sm:gap-x-4 sm:gap-y-9 lg:grid-cols-4 xl:gap-x-5">
+        {!visible.length&&<div className="mb-8 border border-[#c5a572]/20 bg-[#302824] p-8 text-center">
+          <p className="font-serif text-2xl">No matching pieces found.</p>
+          <button type="button" onClick={()=>{setSearch("");setActive("All");}} className="mt-4 inline-flex items-center gap-2 text-sm text-[#c5a572]"><X size={15}/> Clear filters</button>
+        </div>}
+        <div className="grid grid-cols-1 min-[390px]:grid-cols-2 gap-x-4 gap-y-9 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-5">
           {visible.map((p,i)=>(
             <motion.article key={p.slug}
               initial={reduced?false:{opacity:0,y:30}}
@@ -64,23 +77,9 @@ export default function Catalogue({products=[]}) {
               viewport={{once:true,amount:.12}}
               transition={{duration:.55,delay:(i%3)*.08}}
               className="group min-w-0">
-              <div className="relative aspect-[4/5] overflow-hidden bg-[#302824]">
-                <img data-uniform-product-image="true"
-                  src={p.image}
-                  alt={p.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.045]"
-                />
-                <span className="absolute left-4 top-4 bg-[#211b18]/90 px-3 py-2 text-[10px] tracking-widest text-[#c5a572]">
-                  {p.code}
-                </span>
-                <a href={whatsapp(p)} target="_blank" rel="noopener noreferrer"
-                  aria-label={`Enquire about ${p.name}`}
-                  className="absolute bottom-4 right-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#c5a572] text-[#211b18] transition-transform hover:scale-110">
-                  <ArrowUpRight size={20}/>
-                </a>
-              </div>
+              <Link href={`/jewellery/${p.slug}`} className="relative block aspect-[4/5] overflow-hidden bg-[#302824]" aria-label={`View ${p.name}`}>
+                <Image data-uniform-product-image="true" src={p.image} alt={p.name} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.045]" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
+              </Link>
               <div className="pt-6">
                 <span className="text-[9px] uppercase tracking-[.12em] text-[#c5a572]">{p.category}</span>
                 <h2 className="mt-3 font-serif italic font-normal tracking-[-0.035em] text-[clamp(12px,1.5vw,19px)] leading-tight">{p.name}</h2>
@@ -104,7 +103,7 @@ export default function Catalogue({products=[]}) {
           <h2 className="font-serif text-[clamp(30px,3.5vw,48px)] leading-tight text-[#e3d6c4]">
             Love what you see?
             <br/>
-            <em className="font-normal text-[#c5a572]">There's more to explore.</em>
+            <em className="font-normal text-[#c5a572]">There&apos;s more to explore.</em>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-sm leading-8 text-[#b7b2ac]">
             These are just a few of our creations. Contact us to discover

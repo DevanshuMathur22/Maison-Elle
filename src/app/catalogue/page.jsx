@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -78,12 +79,10 @@ export default function Catalogue() {
               transition={{duration:.55,delay:(i%3)*.08}}
               className="group min-w-0">
               <div className="relative aspect-[4/5] overflow-hidden bg-[#302824]">
-                <img
-                  src={`/products/${p[3]}.webp`}
+                <Image src={`/products/${p[3]}.webp`}
                   alt={p[1]}
                   loading="lazy"
-                  className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.045]"
-                />
+                  className="h-full w-full object-contain transition-transform duration-700 group-hover:scale-[1.045]" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
                 <span className="absolute left-4 top-4 bg-[#211b18]/90 px-3 py-2 text-[10px] tracking-widest text-[#c5a572]">
                   {p[0]}
                 </span>

@@ -6,6 +6,7 @@ import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import { products as originals, enquiry } from "@/data/jewellery";
 import { getProducts } from "@/lib/studio-products";
 import ProductCard from "@/components/ProductCard";
+import ProductGallery from "@/components/ProductGallery";
 
 export function generateStaticParams() {
   return originals.map(p=>({slug:p.slug}));
@@ -26,7 +27,7 @@ async function JewelleryDetailContent({params}) {
   return <main className="inner-page">
     <div className="detail-breadcrumb"><Link href="/collections"><ArrowLeft size={15}/> All Collections</Link><span>/</span><span>{product.name}</span></div>
     <section className="detail-layout">
-      <div className="detail-image"><Image src={product.image} alt={product.name} fill unoptimized priority sizes="(max-width: 800px) 100vw, 55vw"/></div>
+      <ProductGallery product={{name:product.name,image:product.image,images:product.images}}/>
       <div className="detail-content">
         <span className="section-kicker">{product.collection.toUpperCase()} / {product.code}</span>
         <h1>{product.name}</h1>

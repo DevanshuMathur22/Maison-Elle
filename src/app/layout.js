@@ -1,5 +1,5 @@
 import SiteShell from "@/components/SiteShell";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,9 +7,14 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+
+
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-cormorant",
 });
 
 export const metadata = {
@@ -21,9 +26,9 @@ export default function RootLayout({ children }) {
   return (
     <html data-scroll-behavior="smooth"
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${cormorant.variable} h-full antialiased`}
     >
-<head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500;1,600&amp;display=swap"/></head>
+
       <body className="min-h-full flex flex-col"><SiteShell>{children}</SiteShell></body>
     </html>
   );

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CategoryShowcase from "./CategoryShowcase";
 import Link from "next/link";
 import { ArrowUpRight, Gem, Heart, Sparkles, Flower2 } from "lucide-react";
@@ -18,9 +19,9 @@ const categories = [
 ];
 
 const occasions = [
-  {title:"The Bridal Edit",description:"Statement jewellery ideas for weddings, ceremonies and treasured celebrations.",image:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1100&q=85"},
-  {title:"Festive Moments",description:"Expressive adornments for celebrations, gatherings and special evenings.",image:"https://images.unsplash.com/photo-1630019852942-f89202989a59?w=1100&q=85"},
-  {title:"Everyday Elegance",description:"Subtle jewellery for personal style and everyday dressing.",image:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1100&q=85"}
+  {title:"The Bridal Edit",description:"Statement jewellery ideas for weddings, ceremonies and treasured celebrations.",image: "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=900&q=85"},
+  {title:"Festive Moments",description:"Expressive adornments for celebrations, gatherings and special evenings.",image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=900&q=85"},
+  {title:"Everyday Elegance",description:"Subtle jewellery for personal style and everyday dressing.",image: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?w=900&q=85"}
 ];
 
 export default function OurStory(){
@@ -34,7 +35,7 @@ export default function OurStory(){
 
     <section className="grid bg-[#302824] md:grid-cols-2">
       <div className="h-[420px] overflow-hidden md:h-auto md:min-h-[650px]">
-        <img className="h-full w-full object-cover" src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1300&q=85" alt="Gold-tone jewellery editorial"/>
+        <Image className="h-full w-full object-cover" src="/images/our-story-gold-closeup.webp" alt="Gold-tone jewellery editorial" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
       </div>
       <div className="flex flex-col items-start justify-center px-[7%] py-20 md:px-[10%] md:py-28">
         <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">THE STORY OF ADORNMENT</span>
@@ -74,7 +75,7 @@ export default function OurStory(){
       </div>
       <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
         {occasions.map(item=><article key={item.title}>
-          <div className="h-[360px] overflow-hidden bg-[#34372e] md:h-[430px]"><img src={item.image} alt={item.title}/></div>
+          <div className="h-[360px] overflow-hidden bg-[#34372e] md:h-[430px]"><Image src={item.image} alt={item.title} width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/></div>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
@@ -82,7 +83,7 @@ export default function OurStory(){
     </section>
 
     <section className="flex flex-col items-start bg-[radial-gradient(ellipse_at_85%_20%,#444233,#211b18_70%)] px-[7%] py-28 md:px-[9%] md:py-40">
-      <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">LET'S FIND YOUR PIECE</span>
+      <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">LET&apos;S FIND YOUR PIECE</span>
       <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">Something beautiful<br/><em className="font-normal text-[#c5a572]">starts here.</em></h2>
       <p>Looking for a particular jewellery style or complete occasion look? Contact us to enquire about designs, prices and availability.</p>
       <a href={enquiry()} target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex items-center justify-between gap-8 bg-[#c5a572] px-7 py-5 text-[11px] font-medium tracking-wider text-[#211b18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e3d6c4]">Enquire on WhatsApp <ArrowUpRight size={18}/></a>

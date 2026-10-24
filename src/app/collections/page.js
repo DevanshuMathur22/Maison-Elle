@@ -10,7 +10,7 @@ async function PublishedCollections() {
       code:p.code,
       name:p.name,
       category:p.category,
-      image:p.image
+      image:p.image,images:p.images
     }));
   return <CollectionsClient products={products}/>;
 }

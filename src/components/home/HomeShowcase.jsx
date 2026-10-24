@@ -22,7 +22,7 @@ const occasions = [
   {name:"Everyday Elegance",caption:"THE BEAUTY OF EVERY DAY",image:"https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&q=85"}
 ];
 
-const heading = "font-serif text-[clamp(42px,6vw,88px)] leading-[1.08] tracking-[-2px] text-[#e3d6c4]";
+const heading = "font-serif text-[clamp(30px,4vw,52px)] leading-[1.08] tracking-[-2px] text-[#e3d6c4]";
 const kicker = "text-[10px] uppercase tracking-[3px] text-[#c5a572]";
 
 function Reveal({children,className="",delay=0}){
@@ -38,7 +38,7 @@ function Reveal({children,className="",delay=0}){
 
 export default function HomeShowcase(){
   return <>
-    <section className="bg-[#211b18] px-[6%] py-24 md:py-36">
+    <section className="bg-[#211b18] px-[6%] py-14 md:py-20">
       <Reveal className="mb-14 flex flex-col justify-between gap-7 md:flex-row md:items-end">
         <div>
           <span className={kicker}>FROM HEAD TO TOE</span>
@@ -67,7 +67,7 @@ export default function HomeShowcase(){
       </div>
     </section>
 
-    <section className="bg-[#302824] px-[6%] py-24 md:py-32">
+    <section className="bg-[#302824] px-[6%] py-14 md:py-20">
       <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
         <div>
           <span className={kicker}>THE JEWELLERY EDIT</span>
@@ -82,7 +82,7 @@ export default function HomeShowcase(){
       </div>
     </section>
 
-    <section className="bg-[#211b18] px-[6%] py-24 md:py-36">
+    <section className="bg-[#211b18] px-[6%] py-14 md:py-20">
       <Reveal className="mb-14">
         <span className={kicker}>MADE FOR THE MOMENT</span>
         <h2 className={`${heading} mt-5`}>Every occasion <em className="text-[#c5a572]">has a story.</em></h2>
@@ -104,7 +104,7 @@ export default function HomeShowcase(){
       </div>
     </section>
 
-    <section className="bg-[radial-gradient(ellipse_at_center,#45382e,#211b18_70%)] px-[7%] py-28 text-center md:py-40">
+    <section className="bg-[radial-gradient(ellipse_at_center,#45382e,#211b18_70%)] px-[7%] py-16 text-center md:py-24">
       <Reveal className="mx-auto flex max-w-[780px] flex-col items-center">
         <Sparkles size={29} strokeWidth={1.2} className="mb-8 text-[#c5a572]"/>
         <span className={kicker}>SOMETHING SPECIAL IN MIND?</span>

@@ -24,7 +24,7 @@ export default function Catalogue({products=[]}) {
 
   return (
     <main className="min-h-screen bg-[#211b18] text-[#e3d6c4]">
-      <section className="relative overflow-hidden px-[6%] pb-20 pt-44 md:pt-56">
+      <section className="relative overflow-hidden px-[6%] pb-12 pt-28 md:pt-36">
         <div className="pointer-events-none absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-[#c5a572]/10 blur-[120px]"/>
         <div className="relative mx-auto max-w-7xl">
           <div className="flex items-center gap-3 text-[11px] tracking-[.3em] text-[#c5a572]">
@@ -41,7 +41,7 @@ export default function Catalogue({products=[]}) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-[6%] pb-28">
+      <section className="mx-auto max-w-7xl px-[6%] pb-16">
         <div className="relative mb-7 max-w-xl">
           <Search size={19} className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-[#c5a572]"/>
           <input type="search" value={search} onChange={e=>setSearch(e.target.value)} placeholder="Search designs, product names or codes..." aria-label="Search collections" className="w-full rounded-lg border border-[#c5a572]/30 bg-[#302824] py-4 pl-12 pr-5 text-sm text-[#e3d6c4] outline-none placeholder:text-[#b7b2ac] focus:border-[#c5a572]"/>
@@ -77,7 +77,7 @@ export default function Catalogue({products=[]}) {
               viewport={{once:true,amount:.12}}
               transition={{duration:.55,delay:(i%3)*.08}}
               className="group min-w-0">
-              <Link href={`/jewellery/${p.slug}`} className="relative block aspect-[4/5] overflow-hidden bg-[#302824]" aria-label={`View ${p.name}`}>
+              <Link href={`/jewellery/${p.slug}`} className="relative block h-[240px] overflow-hidden bg-[#302824] sm:h-[260px] lg:h-[300px]" aria-label={`View ${p.name}`}>
                 <Image data-uniform-product-image="true" src={p.image} alt={p.name} loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.045]" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
               </Link>
               <div className="pt-6">

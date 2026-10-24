@@ -42,12 +42,12 @@ export default function CustomerReviews(){
   const reduced=useReducedMotion();
   const review=reviews[active];
 
-  return <section className="overflow-hidden bg-[#29221e] px-[7%] py-24 md:py-36">
+  return <section className="overflow-hidden bg-[#29221e] px-[7%] py-14 md:py-20">
     <div className="mx-auto max-w-[1250px]">
-      <div className="mb-14 flex flex-wrap items-end justify-between gap-8">
+      <div className="mb-9 flex flex-wrap items-end justify-between gap-8">
         <div>
           <span className="text-[10px] tracking-[3px] text-[#c5a572]">WORDS THAT MATTER</span>
-          <h2 className="mt-5 font-serif text-[clamp(44px,6vw,86px)] leading-[1.1] tracking-[-2px] text-[#e3d6c4]">
+          <h2 className="mt-5 font-serif text-[clamp(28px,3.5vw,44px)] leading-[1.1] tracking-[-1px] text-[#e3d6c4]">
             Style inspirations.<br/><em className="text-[#c5a572]">Sample testimonials.</em>
           </h2>
         </div>
@@ -57,7 +57,7 @@ export default function CustomerReviews(){
         </div>
       </div>
 
-      <div className="relative min-h-[350px] border border-[#c5a572]/20 bg-[#211b18] px-7 py-12 md:px-16 md:py-16">
+      <div className="relative min-h-[280px] border border-[#c5a572]/20 bg-[#211b18] px-7 py-12 md:px-16 md:py-16">
         <Quote size={48} strokeWidth={1} className="absolute right-7 top-8 text-[#c5a572]/20 md:right-14"/>
         <motion.div
           key={active}
@@ -69,8 +69,8 @@ export default function CustomerReviews(){
           <div className="mb-7 flex gap-1 text-[#c5a572]" aria-label="Illustrative five-star design">
             {Array.from({length:5},(_,i)=><Star key={i} size={16} fill="currentColor"/>)}
           </div>
-          <h3 className="font-serif text-2xl text-[#e3d6c4] md:text-4xl">{review.title}</h3>
-          <p className="mt-6 font-serif text-xl leading-relaxed text-[#e3d6c4]/85 md:text-3xl">“{review.text}”</p>
+          <h3 className="font-serif text-[22px] leading-snug text-[#e3d6c4] md:text-[30px]">{review.title}</h3>
+          <p className="mt-4 font-serif text-[15px] leading-[1.8] text-[#e3d6c4]/85 md:text-[19px]">“{review.text}”</p>
           <div className="mt-10 border-t border-[#c5a572]/20 pt-6">
             <p className="text-sm text-[#e3d6c4]">{review.name}</p>
             <p className="mt-2 text-[10px] uppercase tracking-[2px] text-[#c5a572]">{review.occasion}</p>

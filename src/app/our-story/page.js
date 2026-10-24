@@ -26,41 +26,41 @@ const occasions = [
 
 export default function OurStory(){
   return <main className="min-h-screen overflow-hidden bg-[#211b18] text-[#e3d6c4]">
-    <section className="flex min-h-[680px] flex-col items-start justify-center bg-[radial-gradient(ellipse_at_85%_20%,#514235,#211b18_65%)] px-[7%] pb-24 pt-44 md:px-[9%] md:pt-52">
+    <section className="flex min-h-[420px] flex-col items-start justify-center bg-[radial-gradient(ellipse_at_85%_20%,#514235,#211b18_65%)] px-[7%] pb-14 pt-32 md:px-[9%] md:pb-20 md:pt-40">
       <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">OUR WORLD OF JEWELLERY</span>
-      <h1 className="my-8 font-serif text-[clamp(42px,6vw,82px)] leading-[1.05] tracking-[-3px]">Every detail.<br/><em className="font-normal text-[#c5a572]">Every expression.</em></h1>
+      <h1 className="my-5 font-serif text-[clamp(30px,4vw,48px)] leading-[1.1] tracking-[-1px]">Every detail.<br/><em className="font-normal text-[#c5a572]">Every expression.</em></h1>
       <p>From the first adornment in your hair to the delicate finishing touch at your feet, jewellery is a way to express who you are.</p>
-      <Link href="/collections" className="mt-9 inline-flex items-center justify-between gap-8 bg-[#c5a572] px-7 py-5 text-[11px] font-medium tracking-wider text-[#211b18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e3d6c4]">Explore our collections <ArrowUpRight size={18}/></Link>
+      <Link href="/collections" className="mt-6 inline-flex items-center justify-between gap-5 bg-[#c5a572] px-6 py-4 text-[11px] font-medium tracking-wider text-[#211b18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e3d6c4]">Explore our collections <ArrowUpRight size={18}/></Link>
     </section>
 
     <section className="grid bg-[#302824] md:grid-cols-2">
-      <div className="h-[420px] overflow-hidden md:h-auto md:min-h-[650px]">
+      <div className="h-[280px] overflow-hidden sm:h-[340px] md:h-auto md:min-h-[420px]">
         <Image className="h-full w-full object-cover" src="/images/our-story-gold-closeup.webp" alt="Gold-tone jewellery editorial" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/>
       </div>
-      <div className="flex flex-col items-start justify-center px-[7%] py-20 md:px-[10%] md:py-28">
+      <div className="flex flex-col items-start justify-center px-[7%] py-12 md:px-[10%] md:py-16">
         <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">THE STORY OF ADORNMENT</span>
-        <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">More than an<br/><em className="font-normal text-[#c5a572]">accessory.</em></h2>
+        <h2 className="my-4 font-serif text-[clamp(27px,3.5vw,44px)] leading-[1.1] tracking-[-2px]">More than an<br/><em className="font-normal text-[#c5a572]">accessory.</em></h2>
         <p>Jewellery has always been part of how we celebrate, remember and express ourselves. Some pieces complete a bridal look. Others become a favourite detail in everyday life.</p>
         <p>Our artificial jewellery range brings together styles for the head, ears, nose, neck, hands, waist and feet, creating a world where every detail has its place.</p>
         <p>Whether your style is traditional, contemporary, understated or bold, the right adornment can make a moment feel entirely your own.</p>
       </div>
     </section>
 
-    <section className="bg-[#34372e] px-[7%] py-24 md:py-32">
-      <div className="mb-14 max-w-[850px]">
+    <section className="bg-[#34372e] px-[7%] py-14 md:py-20">
+      <div className="mb-8 max-w-[850px]">
         <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">FROM HEAD TO TOE</span>
-        <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">A complete world<br/>of <em className="font-normal text-[#c5a572]">adornment.</em></h2>
+        <h2 className="my-4 font-serif text-[clamp(27px,3.5vw,44px)] leading-[1.1] tracking-[-2px]">A complete world<br/>of <em className="font-normal text-[#c5a572]">adornment.</em></h2>
         <p>Discover jewellery styles for every part of your look.</p>
       </div>
       <CategoryShowcase/>
     </section>
 
-    <section className="bg-[#211b18] px-[7%] py-24 md:py-32">
-      <div className="mb-14 max-w-[850px]">
+    <section className="bg-[#211b18] px-[7%] py-14 md:py-20">
+      <div className="mb-8 max-w-[850px]">
         <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">WHAT INSPIRES US</span>
-        <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">Beauty in the<br/><em className="font-normal text-[#c5a572]">little details.</em></h2>
+        <h2 className="my-4 font-serif text-[clamp(27px,3.5vw,44px)] leading-[1.1] tracking-[-2px]">Beauty in the<br/><em className="font-normal text-[#c5a572]">little details.</em></h2>
       </div>
-      <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         <article><Gem/><h3>Personal Expression</h3><p>Jewellery that complements different moods, personalities and individual styles.</p></article>
         <article><Flower2/><h3>Tradition & Modernity</h3><p>From traditional-inspired adornments to contemporary statement designs.</p></article>
         <article><Heart/><h3>Meaningful Moments</h3><p>Pieces for weddings, festivals, special occasions and everyday memories.</p></article>
@@ -68,25 +68,25 @@ export default function OurStory(){
       </div>
     </section>
 
-    <section className="bg-[#302824] px-[7%] py-24 md:py-32">
-      <div className="mb-14 max-w-[850px]">
+    <section className="bg-[#302824] px-[7%] py-14 md:py-20">
+      <div className="mb-8 max-w-[850px]">
         <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">DRESS FOR THE MOMENT</span>
-        <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">Every occasion<br/><em className="font-normal text-[#c5a572]">has a story.</em></h2>
+        <h2 className="my-4 font-serif text-[clamp(27px,3.5vw,44px)] leading-[1.1] tracking-[-2px]">Every occasion<br/><em className="font-normal text-[#c5a572]">has a story.</em></h2>
       </div>
-      <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {occasions.map(item=><article key={item.title}>
-          <div className="h-[360px] overflow-hidden bg-[#34372e] md:h-[430px]"><Image src={item.image} alt={item.title} width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/></div>
+          <div className="h-[230px] overflow-hidden bg-[#34372e] sm:h-[260px] md:h-[300px]"><Image src={item.image} alt={item.title} width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"/></div>
           <h3>{item.title}</h3>
           <p>{item.description}</p>
         </article>)}
       </div>
     </section>
 
-    <section className="flex flex-col items-start bg-[radial-gradient(ellipse_at_85%_20%,#444233,#211b18_70%)] px-[7%] py-28 md:px-[9%] md:py-40">
+    <section className="flex flex-col items-start bg-[radial-gradient(ellipse_at_85%_20%,#444233,#211b18_70%)] px-[7%] py-14 md:px-[9%] md:py-20">
       <span className="text-[10px] font-medium tracking-[3px] text-[#c5a572]">LET&apos;S FIND YOUR PIECE</span>
-      <h2 className="my-7 font-serif text-[clamp(32px,4vw,58px)] leading-[1.1] tracking-[-2px]">Something beautiful<br/><em className="font-normal text-[#c5a572]">starts here.</em></h2>
+      <h2 className="my-4 font-serif text-[clamp(27px,3.5vw,44px)] leading-[1.1] tracking-[-2px]">Something beautiful<br/><em className="font-normal text-[#c5a572]">starts here.</em></h2>
       <p>Looking for a particular jewellery style or complete occasion look? Contact us to enquire about designs, prices and availability.</p>
-      <a href={enquiry()} target="_blank" rel="noopener noreferrer" className="mt-9 inline-flex items-center justify-between gap-8 bg-[#c5a572] px-7 py-5 text-[11px] font-medium tracking-wider text-[#211b18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e3d6c4]">Enquire on WhatsApp <ArrowUpRight size={18}/></a>
+      <a href={enquiry()} target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center justify-between gap-5 bg-[#c5a572] px-6 py-4 text-[11px] font-medium tracking-wider text-[#211b18] transition-all duration-300 hover:-translate-y-1 hover:bg-[#e3d6c4]">Enquire on WhatsApp <ArrowUpRight size={18}/></a>
     </section>
   </main>;
 }

@@ -44,10 +44,10 @@ export default function CollectionEnhancements() {
   const [active,setActive]=useState(null);
 
   return <div className="mx-auto max-w-[1500px] px-[6%] pb-24 text-[#e3d6c4]">
-    <section className="border-t border-[#c5a572]/20 py-20 md:py-28">
+    <section className="border-t border-[#c5a572]/20 py-10 md:py-14">
       <Reveal className="mx-auto max-w-3xl text-center">
         <p className="text-[10px] uppercase tracking-[.3em] text-[#c5a572]">BEYOND THE EVERYDAY</p>
-        <h2 className="mt-5 font-serif text-[clamp(38px,5vw,68px)] leading-[1.1]">
+        <h2 className="mt-3 font-serif text-[clamp(28px,3vw,42px)] leading-[1.1]">
           Made for <em className="text-[#c5a572]">your moments.</em>
         </h2>
         <p className="mx-auto mt-5 max-w-xl text-sm leading-8 text-[#b7b2ac]">
@@ -55,7 +55,7 @@ export default function CollectionEnhancements() {
         </p>
       </Reveal>
 
-      <div className="mt-14 grid gap-4 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
         {moments.map((item,i)=>{
           const Icon=item.icon;
           return <Reveal key={item.title} delay={i*.08}
@@ -70,12 +70,12 @@ export default function CollectionEnhancements() {
       </div>
     </section>
 
-    <section className="border-t border-[#c5a572]/20 py-20 md:py-28">
+    <section className="border-t border-[#c5a572]/20 py-10 md:py-14">
       <Reveal className="text-center">
         <p className="text-[10px] uppercase tracking-[.3em] text-[#c5a572]">SIMPLE & PERSONAL</p>
-        <h2 className="mt-5 font-serif text-[clamp(38px,5vw,68px)]">How to <em className="text-[#c5a572]">enquire.</em></h2>
+        <h2 className="mt-3 font-serif text-[clamp(28px,3vw,42px)]">How to <em className="text-[#c5a572]">enquire.</em></h2>
       </Reveal>
-      <div className="mt-14 grid gap-8 md:grid-cols-3">
+      <div className="mt-8 grid gap-8 md:grid-cols-3">
         {steps.map((step,i)=><Reveal key={step.number} delay={i*.08} className="border-t border-[#c5a572]/40 pt-6">
           <span className="font-serif text-5xl text-[#c5a572]/65">{step.number}</span>
           <h3 className="mt-6 font-serif text-3xl">{step.title}</h3>
@@ -90,11 +90,11 @@ export default function CollectionEnhancements() {
       </Reveal>
     </section>
 
-    <section className="border-t border-[#c5a572]/20 py-20 md:py-28">
+    <section className="border-t border-[#c5a572]/20 py-10 md:py-14">
       <div className="grid gap-12 lg:grid-cols-[.8fr_1.2fr] lg:gap-20">
         <Reveal>
           <p className="text-[10px] uppercase tracking-[.3em] text-[#c5a572]">GOOD TO KNOW</p>
-          <h2 className="mt-5 font-serif text-[clamp(38px,5vw,62px)] leading-[1.1]">
+          <h2 className="mt-3 font-serif text-[clamp(28px,3vw,42px)] leading-[1.1]">
             A few <em className="text-[#c5a572]">little answers.</em>
           </h2>
           <p className="mt-5 max-w-sm text-sm leading-8 text-[#b7b2ac]">

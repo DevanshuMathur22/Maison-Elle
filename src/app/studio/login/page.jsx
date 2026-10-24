@@ -32,12 +32,12 @@ export default function StudioLogin() {
     }
   }
 
-  return <main className="min-h-screen bg-[#211b18] px-5 pb-20 pt-40 text-[#e3d6c4]">
-    <div className="mx-auto max-w-md border border-[#c5a572]/25 bg-[#302824] p-8 sm:p-12">
+  return <main className="min-h-screen bg-[#211b18] px-5 pb-12 pt-28 sm:pt-32 text-[#e3d6c4]">
+    <div className="mx-auto max-w-md border border-[#c5a572]/25 bg-[#302824] p-6 sm:p-9">
       <p className="text-center text-[11px] uppercase tracking-[.4em] text-[#c5a572]">Vrinda Élle</p>
-      <h1 className="mt-5 text-center font-serif text-5xl italic">Collection Studio</h1>
+      <h1 className="mt-4 text-center font-serif text-3xl italic sm:text-4xl">Collection Studio</h1>
       <p className="mt-4 text-center text-sm text-[#b7b2ac]">Private access for authorised team members</p>
-      <form onSubmit={submit} className="mt-10 space-y-5">
+      <form onSubmit={submit} className="mt-7 space-y-4">
         <label className="block text-xs tracking-widest">EMAIL
           <input required type="email" autoComplete="username" value={email} onChange={e=>setEmail(e.target.value)}
             className="mt-2 w-full border border-[#c5a572]/30 bg-[#211b18] px-4 py-4 text-base outline-none focus:border-[#c5a572]"/>

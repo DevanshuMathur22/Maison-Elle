@@ -33,13 +33,13 @@ export default function Catalogue() {
 
   return (
     <main className="min-h-screen bg-[#211b18] text-[#e3d6c4]">
-      <section className="relative overflow-hidden px-[6%] pb-20 pt-44 md:pt-56">
+      <section className="relative overflow-hidden px-[6%] pb-12 pt-28 md:pt-36">
         <div className="pointer-events-none absolute right-0 top-0 h-[450px] w-[450px] rounded-full bg-[#c5a572]/10 blur-[120px]"/>
         <div className="relative mx-auto max-w-7xl">
           <div className="flex items-center gap-3 text-[11px] tracking-[.3em] text-[#c5a572]">
             <Sparkles size={15}/> THE CURATED EDIT
           </div>
-          <h1 className="mt-7 max-w-4xl font-serif text-[clamp(54px,8vw,112px)] leading-[.98] tracking-tight">
+          <h1 className="mt-7 max-w-4xl font-serif text-[clamp(32px,4.5vw,56px)] leading-[.98] tracking-tight">
             Little details.<br/>
             <em className="font-normal text-[#c5a572]">Beautiful stories.</em>
           </h1>
@@ -50,7 +50,7 @@ export default function Catalogue() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-[6%] pb-28">
+      <section className="mx-auto max-w-7xl px-[6%] pb-16">
         <div className="mb-9 flex flex-wrap items-center gap-3 border-b border-[#c5a572]/20 pb-8">
           {categories.map(c=>(
             <button key={c} onClick={()=>setActive(c)}

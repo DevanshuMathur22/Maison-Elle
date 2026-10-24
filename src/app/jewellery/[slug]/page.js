@@ -52,7 +52,7 @@ export default function JewelleryDetail({params}) {
     <Suspense fallback={
       <main className="inner-page" style={{padding:"160px 8%",minHeight:"75vh"}}>
         <span className="section-kicker">THE JEWELLERY EDIT</span>
-        <h1 style={{fontFamily:"Georgia, serif",fontSize:"clamp(40px,6vw,72px)",marginTop:24}}>
+        <h1 style={{fontFamily:"Georgia, serif",fontSize:"clamp(28px,3.5vw,46px)",marginTop:24}}>
           Discovering your piece...
         </h1>
       </main>

@@ -879,3 +879,15 @@ img {
     height:19px;
   }
 }
+
+
+/* CUSTOMER REVIEWS RESPONSIVE FIX V2 */
+section:has(> div > div > div > span:first-child) h2:has(em) {
+  max-width:100%;
+}
+
+@media(max-width:767px){
+  section:has(.review-typography-target) h2{
+    font-size:30px!important;
+  }
+}

@@ -29,7 +29,7 @@ export default function CategoryShowcase(){
             whileInView={reduced ? undefined : {opacity:1,y:0}}
             viewport={{once:true,amount:0.15}}
             transition={{duration:0.65,delay:reduced ? 0 : (i%3)*0.1}}
-            className="group relative flex min-h-[345px] flex-col overflow-hidden rounded-[3px] border border-[#c5a572]/20 bg-[#211b18]/75 p-8 transition-colors duration-500 hover:border-[#c5a572]/60 hover:bg-[#302824] md:p-10"
+            className="group relative flex min-h-[260px] flex-col overflow-hidden rounded-[3px] border border-[#c5a572]/20 bg-[#211b18]/75 p-8 transition-colors duration-500 hover:border-[#c5a572]/60 hover:bg-[#302824] md:p-7"
           >
             <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-[#c5a572]/0 blur-[70px] transition-colors duration-500 group-hover:bg-[#c5a572]/10"/>
             <div className="relative flex items-start justify-between">
@@ -40,7 +40,7 @@ export default function CategoryShowcase(){
             </div>
             <div className="relative mt-9">
               <span className="text-[9px] font-medium tracking-[2.5px] text-[#c5a572]">{item.subtitle}</span>
-              <h3 className="mt-3 font-serif text-[clamp(27px,2.5vw,37px)] leading-[1.15] text-[#e3d6c4]">{item.title}</h3>
+              <h3 className="mt-3 font-serif text-[clamp(23px,2.5vw,30px)] leading-[1.15] text-[#e3d6c4]">{item.title}</h3>
               <p className="mt-4 max-w-[310px] text-[13px] leading-[1.9] text-[#b7b2ac]">{item.description}</p>
             </div>
             <Link href="/collections" className="relative mt-auto flex items-center justify-between border-t border-[#c5a572]/20 pt-5 text-[11px] tracking-[1px] text-[#c5a572] transition-colors hover:text-[#e3d6c4]">

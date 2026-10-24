@@ -95,7 +95,7 @@ export default function OccasionsManager(){
       <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[#c5a572]/20 py-6">
         <div>
           <Link href="/studio" className="inline-flex items-center gap-2 text-xs text-[#c5a572]"><ArrowLeft size={15}/> Collection Studio</Link>
-          <h1 className="mt-4 font-serif text-4xl italic">Manage Occasions</h1>
+          <h1 className="mt-3 font-serif text-2xl italic sm:text-3xl">Manage Occasions</h1>
           <p className="mt-2 text-xs text-[#b7b2ac]">Curate occasions, covers and existing products.</p>
         </div>
         <button disabled={busy} onClick={()=>{setForm({...empty});setSaved(false);setMessage("");}}

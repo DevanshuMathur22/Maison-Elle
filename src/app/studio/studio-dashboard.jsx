@@ -390,7 +390,7 @@ async function upload(file,replaceIndex=null){
             </div>
             {!!images.length&&<div className="mt-3 flex flex-wrap gap-2">
               {images.map((src,i)=><div key={src} className="w-24">
-                <Image src={src} alt={`Product ${i+1}`} className="h-20 w-24 rounded-lg object-cover" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized/>
+                <Image src={src} alt={`Product ${i+1}`} className="h-24 w-24 rounded-lg object-cover" width={900} height={1125} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" unoptimized/>
                 <div className="mt-1 flex gap-1">
                   <label className="flex flex-1 cursor-pointer justify-center rounded border border-[#c5a572]/30 py-1 text-[10px]">
                     Replace
